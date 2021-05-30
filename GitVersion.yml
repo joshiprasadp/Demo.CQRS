@@ -1,0 +1,18 @@
+mode: mainline
+tag-prefix: '[vV]'
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+no-bump-message: '\+semver:\s?(none|skip)'
+branches:
+    feature:
+        regex: feature[/-]
+        mode: ContinuousDeployment
+        tag: useBranchName
+        increment: Minor
+        prevent-increment-of-merged-branch-version: false
+        track-merge-target: false
+        tracks-release-branches: false
+        is-release-branch: false
+ignore:
+    sha: []
